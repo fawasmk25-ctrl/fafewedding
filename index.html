@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammed & [Partner] — July 30, 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage:    { DEFAULT: '#7A9A7E', light: '#A8C5AD', dark: '#4E6E52', mist: '#EEF3EF' },
+            cream:   { DEFAULT: '#F5F0E8', warm: '#EDE3D2', deep: '#D4C4A8' },
+            bark:    '#5C4A32',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            body:    ['Jost', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #F5F0E8; }
+
+    /* ── Botanical SVG border (signature element) ── */
+    .botanical-rule {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Hero ── */
+    .hero-bg {
+      background: linear-gradient(160deg, #EEF3EF 0%, #F5F0E8 55%, #EDE3D2 100%);
+    }
+
+    /* ── Section divider leaf ── */
+    .leaf-divider::before,
+    .leaf-divider::after {
+      content: '✦';
+      color: #A8C5AD;
+      font-size: 0.65rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* ── Timeline ── */
+    .timeline-line {
+      background: linear-gradient(to bottom, transparent, #A8C5AD 15%, #A8C5AD 85%, transparent);
+    }
+
+    /* ── Countdown digits ── */
+    .digit-card {
+      background: linear-gradient(135deg, #ffffff 0%, #EEF3EF 100%);
+      border: 1px solid #A8C5AD;
+      box-shadow: 0 2px 12px rgba(78,110,82,0.08);
+    }
+
+    /* ── RSVP button pulse ── */
+    @keyframes gentle-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(122,154,126,0.4); }
+      50%       { box-shadow: 0 0 0 10px rgba(122,154,126,0); }
+    }
+    .rsvp-btn { animation: gentle-pulse 2.8s infinite; }
+
+    /* ── Scroll reveal ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .rsvp-btn { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="font-body text-bark antialiased">
+
+  <!-- ════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="hero-bg min-h-screen flex flex-col items-center justify-center px-6 py-20 text-center relative overflow-hidden">
+
+    <!-- Decorative corner flourishes -->
+    <svg class="absolute top-0 left-0 w-40 md:w-56 opacity-20 pointer-events-none" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 10 Q60 10 60 60 Q60 110 110 110" stroke="#7A9A7E" stroke-width="1.5" fill="none"/>
+      <ellipse cx="80" cy="45" rx="18" ry="9" transform="rotate(-30 80 45)" fill="#7A9A7E" opacity="0.6"/>
+      <ellipse cx="45" cy="80" rx="14" ry="7" transform="rotate(50 45 80)" fill="#A8C5AD" opacity="0.5"/>
+      <ellipse cx="110" cy="95" rx="12" ry="6" transform="rotate(-15 110 95)" fill="#7A9A7E" opacity="0.4"/>
+      <circle cx="62" cy="62" r="3" fill="#4E6E52" opacity="0.5"/>
+    </svg>
+    <svg class="absolute top-0 right-0 w-40 md:w-56 opacity-20 pointer-events-none" style="transform:scaleX(-1)" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 10 Q60 10 60 60 Q60 110 110 110" stroke="#7A9A7E" stroke-width="1.5" fill="none"/>
+      <ellipse cx="80" cy="45" rx="18" ry="9" transform="rotate(-30 80 45)" fill="#7A9A7E" opacity="0.6"/>
+      <ellipse cx="45" cy="80" rx="14" ry="7" transform="rotate(50 45 80)" fill="#A8C5AD" opacity="0.5"/>
+      <ellipse cx="110" cy="95" rx="12" ry="6" transform="rotate(-15 110 95)" fill="#7A9A7E" opacity="0.4"/>
+      <circle cx="62" cy="62" r="3" fill="#4E6E52" opacity="0.5"/>
+    </svg>
+    <svg class="absolute bottom-0 left-0 w-40 md:w-56 opacity-20 pointer-events-none" style="transform:scaleY(-1)" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 10 Q60 10 60 60 Q60 110 110 110" stroke="#7A9A7E" stroke-width="1.5" fill="none"/>
+      <ellipse cx="80" cy="45" rx="18" ry="9" transform="rotate(-30 80 45)" fill="#7A9A7E" opacity="0.6"/>
+      <ellipse cx="45" cy="80" rx="14" ry="7" transform="rotate(50 45 80)" fill="#A8C5AD" opacity="0.5"/>
+    </svg>
+    <svg class="absolute bottom-0 right-0 w-40 md:w-56 opacity-20 pointer-events-none" style="transform:scale(-1,-1)" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 10 Q60 10 60 60 Q60 110 110 110" stroke="#7A9A7E" stroke-width="1.5" fill="none"/>
+      <ellipse cx="80" cy="45" rx="18" ry="9" transform="rotate(-30 80 45)" fill="#7A9A7E" opacity="0.6"/>
+      <ellipse cx="45" cy="80" rx="14" ry="7" transform="rotate(50 45 80)" fill="#A8C5AD" opacity="0.5"/>
+    </svg>
+
+    <!-- Content -->
+    <p class="font-body text-sage-dark tracking-[0.35em] uppercase text-xs md:text-sm mb-6">Together with their families</p>
+
+    <!-- Botanical botanical-rule SVG (signature element) -->
+    <svg class="botanical-rule mb-4 opacity-60" viewBox="0 0 480 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="15" x2="195" y2="15" stroke="#A8C5AD" stroke-width="0.8"/>
+      <ellipse cx="215" cy="15" rx="12" ry="6" transform="rotate(-20 215 15)" fill="#7A9A7E" opacity="0.7"/>
+      <ellipse cx="240" cy="10" rx="10" ry="5" transform="rotate(10 240 10)" fill="#A8C5AD" opacity="0.8"/>
+      <ellipse cx="265" cy="15" rx="12" ry="6" transform="rotate(20 265 15)" fill="#7A9A7E" opacity="0.7"/>
+      <circle cx="240" cy="15" r="2.5" fill="#4E6E52"/>
+      <line x1="285" y1="15" x2="480" y2="15" stroke="#A8C5AD" stroke-width="0.8"/>
+    </svg>
+
+    <h1 class="font-display font-light text-6xl md:text-8xl lg:text-9xl text-sage-dark leading-none tracking-tight mb-2">
+      Muhammed
+    </h1>
+    <p class="font-display italic text-sage text-3xl md:text-4xl mb-2">&amp;</p>
+    <h1 class="font-display font-light text-6xl md:text-8xl lg:text-9xl text-sage-dark leading-none tracking-tight mb-8">
+      [Partner's Name]
+    </h1>
+
+    <svg class="botanical-rule my-4 opacity-60" viewBox="0 0 480 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="15" x2="195" y2="15" stroke="#A8C5AD" stroke-width="0.8"/>
+      <ellipse cx="215" cy="15" rx="12" ry="6" transform="rotate(-20 215 15)" fill="#7A9A7E" opacity="0.7"/>
+      <ellipse cx="240" cy="10" rx="10" ry="5" transform="rotate(10 240 10)" fill="#A8C5AD" opacity="0.8"/>
+      <ellipse cx="265" cy="15" rx="12" ry="6" transform="rotate(20 265 15)" fill="#7A9A7E" opacity="0.7"/>
+      <circle cx="240" cy="15" r="2.5" fill="#4E6E52"/>
+      <line x1="285" y1="15" x2="480" y2="15" stroke="#A8C5AD" stroke-width="0.8"/>
+    </svg>
+
+    <p class="font-display italic text-2xl md:text-3xl text-bark/70 mb-2">Wednesday, the 30th of July</p>
+    <p class="font-body text-sm tracking-[0.25em] uppercase text-sage-dark mb-10">Two Thousand &amp; Twenty-Six · Al Khobar, Saudi Arabia</p>
+
+    <a href="#rsvp"
+       class="rsvp-btn inline-block bg-sage text-cream font-body text-sm tracking-[0.2em] uppercase px-10 py-4 rounded-full hover:bg-sage-dark transition-colors duration-300">
+      RSVP Now
+    </a>
+
+    <a href="#details" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-sage animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </a>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       COUNTDOWN
+  ════════════════════════════════════════════ -->
+  <section class="bg-sage-mist py-20 px-6 text-center reveal" id="countdown">
+    <p class="font-body text-xs tracking-[0.3em] uppercase text-sage-dark mb-2">Counting down to forever</p>
+    <h2 class="font-display text-4xl md:text-5xl font-light text-bark mb-12">The Big Day Is Almost Here</h2>
+
+    <div class="flex justify-center gap-4 md:gap-8 flex-wrap" id="timer">
+      <div class="digit-card rounded-2xl px-6 py-5 min-w-[80px]">
+        <p class="font-display text-5xl md:text-6xl font-light text-sage-dark" id="days">00</p>
+        <p class="font-body text-xs tracking-widest uppercase text-bark/50 mt-1">Days</p>
+      </div>
+      <div class="digit-card rounded-2xl px-6 py-5 min-w-[80px]">
+        <p class="font-display text-5xl md:text-6xl font-light text-sage-dark" id="hours">00</p>
+        <p class="font-body text-xs tracking-widest uppercase text-bark/50 mt-1">Hours</p>
+      </div>
+      <div class="digit-card rounded-2xl px-6 py-5 min-w-[80px]">
+        <p class="font-display text-5xl md:text-6xl font-light text-sage-dark" id="minutes">00</p>
+        <p class="font-body text-xs tracking-widest uppercase text-bark/50 mt-1">Minutes</p>
+      </div>
+      <div class="digit-card rounded-2xl px-6 py-5 min-w-[80px]">
+        <p class="font-display text-5xl md:text-6xl font-light text-sage-dark" id="seconds">00</p>
+        <p class="font-body text-xs tracking-widest uppercase text-bark/50 mt-1">Seconds</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       LOVE STORY TIMELINE
+  ════════════════════════════════════════════ -->
+  <section class="bg-cream py-24 px-6 reveal" id="story">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-body text-xs tracking-[0.3em] uppercase text-sage-dark text-center mb-2">How it all began</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light text-bark text-center mb-16">Our Story</h2>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="timeline-line absolute left-1/2 -translate-x-px top-0 bottom-0 w-px hidden md:block"></div>
+
+        <!-- Event 1 -->
+        <div class="relative flex flex-col md:flex-row md:items-start mb-16 gap-6 md:gap-0">
+          <div class="md:w-1/2 md:pr-12 md:text-right">
+            <p class="font-display italic text-sage text-lg mb-1">The First Meeting</p>
+            <h3 class="font-display text-2xl text-bark font-light mb-2">A chance encounter</h3>
+            <p class="font-body text-sm text-bark/60 leading-relaxed">We crossed paths for the first time, and the world felt a little different after. Neither of us knew then what that moment would grow into.</p>
+          </div>
+          <div class="hidden md:flex absolute left-1/2 top-1 -translate-x-1/2 w-8 h-8 rounded-full bg-sage items-center justify-center z-10">
+            <div class="w-2.5 h-2.5 rounded-full bg-cream"></div>
+          </div>
+          <div class="md:w-1/2 md:pl-12">
+            <span class="inline-block font-body text-xs tracking-widest uppercase bg-sage-mist text-sage-dark border border-sage-light px-4 py-1.5 rounded-full">Year One</span>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="relative flex flex-col md:flex-row md:items-start mb-16 gap-6 md:gap-0">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+            <span class="inline-block font-body text-xs tracking-widest uppercase bg-sage-mist text-sage-dark border border-sage-light px-4 py-1.5 rounded-full">Growing Together</span>
+          </div>
+          <div class="hidden md:flex absolute left-1/2 top-1 -translate-x-1/2 w-8 h-8 rounded-full bg-sage items-center justify-center z-10 order-2 md:order-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-cream"></div>
+          </div>
+          <div class="md:w-1/2 md:pl-12 order-1 md:order-3">
+            <p class="font-display italic text-sage text-lg mb-1">Building a Bond</p>
+            <h3 class="font-display text-2xl text-bark font-light mb-2">Late nights, long talks</h3>
+            <p class="font-body text-sm text-bark/60 leading-relaxed">Through long conversations and shared dreams, we discovered we were building something rare — a friendship that quietly became so much more.</p>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="relative flex flex-col md:flex-row md:items-start mb-16 gap-6 md:gap-0">
+          <div class="md:w-1/2 md:pr-12 md:text-right">
+            <p class="font-display italic text-sage text-lg mb-1">The Proposal</p>
+            <h3 class="font-display text-2xl text-bark font-light mb-2">She said yes</h3>
+            <p class="font-body text-sm text-bark/60 leading-relaxed">On a quiet evening that neither of us will ever forget, a question was asked — and answered with a smile that said everything.</p>
+          </div>
+          <div class="hidden md:flex absolute left-1/2 top-1 -translate-x-1/2 w-8 h-8 rounded-full bg-sage items-center justify-center z-10">
+            <div class="w-2.5 h-2.5 rounded-full bg-cream"></div>
+          </div>
+          <div class="md:w-1/2 md:pl-12">
+            <span class="inline-block font-body text-xs tracking-widest uppercase bg-sage-mist text-sage-dark border border-sage-light px-4 py-1.5 rounded-full">Engagement</span>
+          </div>
+        </div>
+
+        <!-- Event 4 — The Wedding -->
+        <div class="relative flex flex-col md:flex-row md:items-start gap-6 md:gap-0">
+          <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
+            <span class="inline-block font-body text-xs tracking-widest uppercase bg-sage text-cream px-4 py-1.5 rounded-full">July 30, 2026</span>
+          </div>
+          <div class="hidden md:flex absolute left-1/2 top-1 -translate-x-1/2 w-8 h-8 rounded-full bg-sage-dark items-center justify-center z-10 order-2 md:order-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-cream"></div>
+          </div>
+          <div class="md:w-1/2 md:pl-12 order-1 md:order-3">
+            <p class="font-display italic text-sage text-lg mb-1">The Beginning</p>
+            <h3 class="font-display text-2xl text-bark font-light mb-2">Forever starts here</h3>
+            <p class="font-body text-sm text-bark/60 leading-relaxed">And now we invite you — the people who shaped us — to witness the next chapter as we say "I do" in front of everyone we love.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       EVENT DETAILS
+  ════════════════════════════════════════════ -->
+  <section class="bg-sage-mist py-24 px-6 reveal" id="details">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="font-body text-xs tracking-[0.3em] uppercase text-sage-dark mb-2">You are warmly invited</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light text-bark mb-14">Event Details</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Date -->
+        <div class="bg-white/70 backdrop-blur rounded-2xl p-8 border border-sage-light/50">
+          <svg class="w-8 h-8 mx-auto mb-4 text-sage" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <p class="font-body text-xs tracking-widest uppercase text-sage-dark mb-2">Date</p>
+          <p class="font-display text-2xl text-bark font-light">Wednesday</p>
+          <p class="font-display text-3xl text-sage-dark">30 July 2026</p>
+        </div>
+
+        <!-- Time -->
+        <div class="bg-white/70 backdrop-blur rounded-2xl p-8 border border-sage-light/50">
+          <svg class="w-8 h-8 mx-auto mb-4 text-sage" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <p class="font-body text-xs tracking-widest uppercase text-sage-dark mb-2">Time</p>
+          <p class="font-display text-2xl text-bark font-light">Reception</p>
+          <p class="font-display text-3xl text-sage-dark">7:00 PM</p>
+          <p class="font-body text-xs text-bark/50 mt-1">Ceremony at 8:00 PM</p>
+        </div>
+
+        <!-- Location -->
+        <div class="bg-white/70 backdrop-blur rounded-2xl p-8 border border-sage-light/50">
+          <svg class="w-8 h-8 mx-auto mb-4 text-sage" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <p class="font-body text-xs tracking-widest uppercase text-sage-dark mb-2">Location</p>
+          <p class="font-display text-2xl text-bark font-light">[Venue Name]</p>
+          <p class="font-display text-xl text-sage-dark">[City, Country]</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener"
+             class="inline-block mt-3 font-body text-xs tracking-widest uppercase text-sage hover:text-sage-dark transition-colors underline underline-offset-4">
+            View on Map →
+          </a>
+        </div>
+      </div>
+
+      <!-- Dress code note -->
+      <div class="mt-10 inline-flex items-center gap-3 bg-white/60 border border-sage-light/50 rounded-full px-6 py-3">
+        <svg class="w-4 h-4 text-sage flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <p class="font-body text-xs tracking-wider text-bark/60">Dress Code: <span class="text-sage-dark font-medium">Formal Elegance — Sage & Cream tones welcome</span></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       RSVP
+  ════════════════════════════════════════════ -->
+  <section class="bg-cream py-24 px-6 text-center reveal" id="rsvp">
+    <div class="max-w-xl mx-auto">
+
+      <svg class="botanical-rule mb-6 opacity-50" viewBox="0 0 480 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="15" x2="195" y2="15" stroke="#A8C5AD" stroke-width="0.8"/>
+        <ellipse cx="215" cy="15" rx="12" ry="6" transform="rotate(-20 215 15)" fill="#7A9A7E" opacity="0.7"/>
+        <ellipse cx="240" cy="10" rx="10" ry="5" transform="rotate(10 240 10)" fill="#A8C5AD" opacity="0.8"/>
+        <ellipse cx="265" cy="15" rx="12" ry="6" transform="rotate(20 265 15)" fill="#7A9A7E" opacity="0.7"/>
+        <circle cx="240" cy="15" r="2.5" fill="#4E6E52"/>
+        <line x1="285" y1="15" x2="480" y2="15" stroke="#A8C5AD" stroke-width="0.8"/>
+      </svg>
+
+      <p class="font-body text-xs tracking-[0.3em] uppercase text-sage-dark mb-2">We'd love to have you</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light text-bark mb-4">Will You Join Us?</h2>
+      <p class="font-body text-sm text-bark/60 leading-relaxed mb-10">
+        Kindly respond by <strong class="text-bark">20th July 2026</strong> so we can ensure a place for you at our table.
+      </p>
+
+      <!-- RSVP via email button -->
+      <a href="mailto:your@email.com?subject=RSVP%20-%20Muhammed%20%26%20[Partner]%20Wedding&body=Hi!%20I%20would%20like%20to%20RSVP%20for%20your%20wedding%20on%20July%2030%2C%202026.%0A%0AName%3A%20%0ANumber%20of%20guests%3A%20%0ADietary%20requirements%3A%20"
+         class="rsvp-btn inline-block bg-sage-dark text-cream font-body text-sm tracking-[0.25em] uppercase px-12 py-5 rounded-full hover:bg-sage transition-colors duration-300 mb-4">
+        ✉ RSVP via Email
+      </a>
+
+      <p class="font-body text-xs text-bark/40 mt-4">or</p>
+
+      <!-- RSVP via Google Form — PLACEHOLDER -->
+      <p class="font-body text-xs text-bark/50 mt-3">
+        Prefer a form?
+        <a href="https://forms.google.com" target="_blank" rel="noopener"
+           class="text-sage hover:text-sage-dark underline underline-offset-2 transition-colors">
+          Fill out our RSVP form here
+        </a>
+        <span class="block text-bark/30 mt-1">(Replace this link with your actual Google Form URL)</span>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="bg-sage-dark text-cream/70 py-10 text-center px-6">
+    <p class="font-display italic text-2xl text-cream mb-2">Muhammed &amp; [Partner]</p>
+    <p class="font-body text-xs tracking-widest uppercase">July 30, 2026 · Al Khobar, Saudi Arabia</p>
+    <p class="font-body text-xs mt-4 text-cream/40">Made with love ♥</p>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════ -->
+  <script>
+    // ── Countdown ──
+    function updateCountdown() {
+      const target = new Date('2026-07-30T20:00:00+03:00').getTime();
+      const now    = new Date().getTime();
+      const diff   = target - now;
+
+      if (diff <= 0) {
+        document.getElementById('timer').innerHTML =
+          '<p class="font-display text-3xl text-sage-dark italic col-span-4">Today is the day! 🎉</p>';
+        return;
+      }
+
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+
+      document.getElementById('days').textContent    = String(d).padStart(2,'0');
+      document.getElementById('hours').textContent   = String(h).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
